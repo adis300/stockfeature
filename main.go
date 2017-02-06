@@ -8,21 +8,18 @@ import (
 	"strconv"
 )
 
-var djiFileName = "_DJI_20150319-20170203"
-var djiNames = []string{"AAPL", "AXP", "BA", "CAT", "CSCO",
-	"CVX", "KO", "DD", "XOM", "GE",
-	"GS", "HD", "IBM", "INTC", "JNJ",
-	"JPM", "MCD", "MMM", "MRK", "MSFT",
-	"NKE", "PFE", "PG", "TRV", "UNH",
-	"UTC", "V", "VZ", "WMT", "DIS",
-}
-
 func main() {
+
+	_ = os.Mkdir("computed", os.ModePerm)
+
 	computeFile(djiFileName)
+	for _, stockName := range djiNames {
+		computeFile(stockName)
+	}
 }
 
 func computeFile(filename string) {
-	sourceFile, err := os.Open(filename + ".csv")
+	sourceFile, err := os.Open("data/" + filename + ".csv")
 	if err != nil {
 		fmt.Println("Error: reading data"+filename, err)
 		return
@@ -30,7 +27,7 @@ func computeFile(filename string) {
 
 	defer sourceFile.Close()
 
-	computedFile, err := os.Create("computed/" + filename + "_computed.csv")
+	computedFile, err := os.Create("computed/" + filename + ".csv")
 	if err != nil {
 		fmt.Println("Error: writing data:"+filename, err)
 		return
@@ -88,8 +85,6 @@ func computeFile(filename string) {
 		}
 	}
 }
-
-var headers = []string{"Date", "Close", "Diff0", "DiffHighLow", "DiffSM", "DiffMD", "DiffLG", "Avg0", "AvgSM", "AvgMD", "AvgLG"}
 
 func extractFeature(data [][]float64, dates []string) []string {
 
