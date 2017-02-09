@@ -88,9 +88,10 @@ func computeFile(filename string) {
 
 func extractFeature(data [][]float64, dates []string) []string {
 
+	openValue := data[0][0]
 	closeValue := data[0][3]
 	// Initialize features with date and close value
-	features := []string{dates[0], strconv.FormatFloat(closeValue, 'f', 12, 64)}
+	features := []string{dates[0], strconv.FormatFloat(openValue, 'f', -1, 64), strconv.FormatFloat(closeValue, 'f', -1, 64)}
 	// Diff0: Same day movement
 	features = append(features, strconv.FormatFloat((closeValue-data[0][0])/closeValue, 'f', -1, 64))
 	// DiffHighLow: A measurement of stability
