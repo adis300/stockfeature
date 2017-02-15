@@ -19,7 +19,7 @@ var djiNames = []string{"AAPL", "AXP", "BA", "CAT", "CSCO",
 	"GS", "HD", "IBM", "INTC", "JNJ",
 	"JPM", "MCD", "MMM", "MRK", "MSFT",
 	"NKE", "PFE", "PG", "TRV", "UNH",
-	"UTC", "V", "VZ", "WMT", "DIS",
+	"UTX", "V", "VZ", "WMT", "DIS",
 }
 
 var headers = []string{"Date", "Open", "Close", "Diff0", "DiffHighLow", "DiffSM", "DiffMD", "DiffLG", "Avg0", "AvgSM", "AvgMD", "AvgLG"}
