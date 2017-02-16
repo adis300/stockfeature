@@ -15,11 +15,11 @@ const FILTER_SIZE_LG_FLOAT float64 = float64(FILTER_SIZE_LG)
 var djiFileName = "_DJI_20150319-20170203"
 
 var djiNames = []string{"AAPL", "AXP", "BA", "CAT", "CSCO",
-	"CVX", "KO", "DD", "XOM", "GE",
+	"CVX", "KO", "DIS", "DD", "GE",
 	"GS", "HD", "IBM", "INTC", "JNJ",
 	"JPM", "MCD", "MMM", "MRK", "MSFT",
 	"NKE", "PFE", "PG", "TRV", "UNH",
-	"UTX", "V", "VZ", "WMT", "DIS",
+	"UTX", "V", "VZ", "WMT", "XOM",
 }
 
 var headers = []string{"Date", "Open", "Close", "Diff0", "DiffHighLow", "DiffSM", "DiffMD", "DiffLG", "Avg0", "AvgSM", "AvgMD", "AvgLG"}
